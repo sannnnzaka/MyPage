@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 特定のリファラからのアクセスを許可する
+    RewriteCond %{HTTP_REFERER} !^https://chatgpt.com/g/g-nLyufj6g2-unity-code-helper [NC]
+    
+    # リファラが指定のURLと一致しない場合、403エラーを返す
+    RewriteRule ^ - [F]
+</IfModule>
